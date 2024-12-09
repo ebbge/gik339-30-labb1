@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grupp 30 - Labb 1</title>
+    <style>
+        body {
+            background-color: lightskyblue; 
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container" style="background-color: white; padding: 20px; border: 1px solid #ccc; border-radius: 10px; max-width: 400px; margin: auto;">
+    <h1>Grupp 30 - Labb 1</h1>
+    <div section="input-field"> <!-- Uppgift 2: Skapa 3 input-element -->
+        <div class="subsection_color">
+        <label for="color">Färg:</label>
+        <input type="text" name="color" id="color" class="textfield">
+        </div>
+        <div section="subsection_content">
+        <label for="content">Innehåll:</label>
+        <input type="text" name="content" id="content" class="textfield">
+        </div>
+        <div section="subsection_checkbox">  
+        <label for="divStyle">Stil på box:</label>
+        <input type="checkbox" name="divStyle" id="divStyle" class="checkbox">
+        </div>     
+        <div section="subsection_remove">     
+        <button id="removeElement" class="button">Ta bort</button> <!-- Uppgift 2: Skapa ett button-element -->
+        </div>
+    </div>
+    <div id="emptyDiv" class="empty-div"></div> <!-- Uppgift 2: Skapa ett div-element som är tomt -->
+    <script src="./script.js"></script><!--  Skapa och länka script-fil -->
 </body>
 </html>
