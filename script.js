@@ -1,27 +1,40 @@
-const checkbox = document.getElementById('divStyle'); 
+/* Uppgift 4 - Skapa variabler */
+const checkbox = document.getElementById('divStyle');
 
-const textfields = document.querySelectorAll('.textfield'); 
+const textfields = document.querySelectorAll('.textfield');
 
-const button = document.getElementsByClassName('button')[0]; 
+const button = document.querySelector('.button');
 
-const divElement = document.querySelector('#emptyDiv'); 
+const divElement = document.getElementById('emptyDiv');
 
-function handleInputEvent(e) {
-    console.log('Avsändare (target):', e.target); 
+/* Uppgift 5 - Skapa en fördefinierad funktion */
+function handleInput(e) {
+  console.log('Avsändare (target):', e.target);
 
-    const inputName = e.target.name; 
-    console.log('Name-attribut:', inputName);
+  const inputName = e.target.name;
+  console.log('Name-attribut:', inputName);
 
+  if (inputName === 'content') {
     divElement.innerHTML = e.target.value;
-
+  }
 }
+/* Uppgift 6 Koppla eventlyssnare */
+checkbox.addEventListener('change', (e) => {
+  const colorInput = document.querySelector('#color');
 
-checkbox.addEventListener('change', function() {
-    const colorInput = Array.from(textfields).find(input => input.id === 'color'); 
-    const color = colorInput.value; 
-    divElement.style.backgroundColor = color; 
+  if (colorInput) {
+    const color = colorInput.value;
+    divElement.style.backgroundColor = color;
+  } else {
+    console.error('Färginputfältet med id="color" finns inte!');
+  }
 });
 
-textfields.forEach(textfield => {
-    textfield.addEventListener('input', handleInputEvent); 
+textfields.forEach((textfield) => {
+  textfield.addEventListener('input', handleInput);
+});
+
+button.addEventListener('click', (e) => {
+  divElement.remove();
+  console.log('Elementet har tagits bort');
 });
